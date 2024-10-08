@@ -41,9 +41,12 @@ const button3 = document.querySelector('#btn3');
 button3.addEventListener('click', () => {
     alert('Heeeeyoooo')
 });
-button3.addEventListener("click", function (e) {
-    console.log(e);
-  });
+// button3.addEventListener("click", function (e) {
+//     console.log(e);
+//   });
   button3.addEventListener("click", function (e) {
     console.log(e.target);
   });
+  button3.addEventListener("click", function (e){
+    console.log(e.target.style.background = "lime")
+  })
