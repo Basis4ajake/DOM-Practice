@@ -12,8 +12,29 @@
       </section>
       <script>
         const link = document.querySelector("a");
+        console.dir(link);
+        console.log(window);
         link.textContent = "Mozilla Developer Network";
         link.href = "https://developer.mozilla.org";
+
+        const section = document.queryselector('section');
+        const para = document.createElement('p');
+        para.textContent = 'We hope you enjoyed the ride';
+        section.appendChild(para);
+
+        //Creating text node
+        const text = document.createTextNode (
+            " — the premier source for web development knowledge.",
+        );
+        const linkPara = document.querySelector('p');
+        linkPara.appendChild(text);
+        section.appendChild(linkPara);
+
+        //Remove methods
+        section.removeChild(linkPara);   
+        linkPara.remove();
+        linkPara.parentNode.removeChild(linkPara);
+
       </script>
   </body>
 </html>
