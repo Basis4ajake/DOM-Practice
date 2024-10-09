@@ -35,32 +35,26 @@
         const input = document.querySelector('input');
         const button = document.querySelector('button');
 
-      
-        
-        
         button.addEventListener('click', () => {
             const getItem = input.value;
             input.value = '';
-        }
-    
-    ) 
-
-        const listItem = document.createElement('li');
-        const span = document.createElement('span');
-        const deleteButton = document.createElement('deleteButton');
         
-        listItem.appendChild(span);
-        listItem.appendChild(button);
-
-        // span.textContent = storeInput;
-        deleteButton.textContent = "Delete";
-        ul.appendChild(listItem);
-        deleteButton.addEventListener("click", () => {
+            const listItem = document.createElement('li');
+            const span = document.createElement('span');
+            const deleteButton = document.createElement('button');
+            
+            listItem.appendChild(span);
+            span.textContent = getItem;
+            listItem.appendChild(deleteButton);
+            deleteButton.textContent = 'Delete';
+            ul.appendChild(listItem);
+            
+            deleteButton.addEventListener("click", () => {
             ul.removeChild(listItem);
-            input.focus();
         });
 
-
+    input.focus();
+        });
     </script>
   </body>
 </html>
