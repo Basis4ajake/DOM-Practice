@@ -18,12 +18,14 @@ blueHeader3.textContent = 'Hey I am Blue!'
 
 const blackBox = document.createElement('div')
 blackBox.classList.toggle('blackBox')
-blackBox.setAttribute('style', 'border: 4px solid black; backgroundColor: pink;')
+blackBox.setAttribute('style', 'border: 4px solid black; background-color: pink;')
+
 
 const headerInsideBlackBox = document.createElement('h1')
 headerInsideBlackBox.classList.toggle('headerInsideBlackBox')
 headerInsideBlackBox.style.color = 'black';
 headerInsideBlackBox.textContent = 'This is the header inside the box';
+
 
 const textInsideBlackBox = document.createElement('p')
 textInsideBlackBox.classList.toggle('textInsideBlackBox')
@@ -41,12 +43,16 @@ const button3 = document.querySelector('#btn3');
 button3.addEventListener('click', () => {
     alert('Heeeeyoooo')
 });
-// button3.addEventListener("click", function (e) {
-//     console.log(e);
-//   });
+button3.addEventListener("click", function (e) {
+    console.log(e);
+  });
   button3.addEventListener("click", function (e) {
     console.log(e.target);
   });
   button3.addEventListener("click", function (e){
     console.log(e.target.style.background = "lime")
   })
+
+  button2.addEventListener("click", function (e) {
+    console.log(e.target.style.background = "purple")
+})
