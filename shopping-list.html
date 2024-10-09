@@ -35,27 +35,31 @@
         const input = document.querySelector('input');
         const button = document.querySelector('button');
 
-        function storeItem() {
-                let storeInput = input.getAttribute('value');
-                input.value = '';
-                console.dir(storeInput);
-                console.log(storeInput);
-        }
+      
         
-        button.addEventListener('click', storeItem())        
+        
+        button.addEventListener('click', () => {
+            const getItem = input.value;
+            input.value = '';
+        }
+    
+    ) 
+
         const listItem = document.createElement('li');
         const span = document.createElement('span');
         const deleteButton = document.createElement('deleteButton');
+        
         listItem.appendChild(span);
         listItem.appendChild(button);
 
-        span.textContent = "";
+        // span.textContent = storeInput;
         deleteButton.textContent = "Delete";
         ul.appendChild(listItem);
-
         deleteButton.addEventListener("click", () => {
             ul.removeChild(listItem);
+            input.focus();
         });
+
 
     </script>
   </body>
