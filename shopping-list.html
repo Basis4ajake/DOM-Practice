@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang='en-US'>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Shopping list example</title>
     <style>
       li {
@@ -21,16 +21,41 @@
     <h1>My shopping list</h1>
 
     <div>
-        <label for="item">Enter a new item:</label>
-        <input type="text" name="item" id="item">
+        <label for='item'>Enter a new item:</label>
+        <input type='text' name='item' id='item'>
         <button>Add item</button>
     </div>
 
     <ul>
-
+        
     </ul>
 
     <script>
+        const ul = document.querySelector('ul');
+        const input = document.querySelector('input');
+        const button = document.querySelector('button');
+
+        function storeItem() {
+                let storeInput = input.getAttribute('value');
+                input.value = '';
+                console.dir(storeInput);
+                console.log(storeInput);
+        }
+        
+        button.addEventListener('click', storeItem())        
+        const listItem = document.createElement('li');
+        const span = document.createElement('span');
+        const deleteButton = document.createElement('deleteButton');
+        listItem.appendChild(span);
+        listItem.appendChild(button);
+
+        span.textContent = "";
+        deleteButton.textContent = "Delete";
+        ul.appendChild(listItem);
+
+        deleteButton.addEventListener("click", () => {
+            ul.removeChild(listItem);
+        });
 
     </script>
   </body>
